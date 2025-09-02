@@ -1,0 +1,76 @@
+// sass/_layout.scss
+@use 'variables';
+@use 'mixins';
+
+header {
+  background-image: url("../imagenes/fondo-header.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.4);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.logo {
+  width: 130px;
+  height: auto;
+  margin-right: 25px;
+}
+
+// UNIDADES y BOMBEROS
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.unidad, .bombero {
+  animation: fadeInUp 1s ease-in-out forwards;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  max-width: 300px;
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+.bombero img {
+  border-radius: 50%;
+  max-width: 200px;
+  margin-bottom: 15px;
+}
+
+main.unidades, .bomberos .miembros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 0 20px;
+}
